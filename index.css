@@ -16,7 +16,6 @@ body {
   height: 100vh;
   max-width: 100vw;
   max-height: 100vh;
-  padding: 1.25em;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -40,8 +39,12 @@ svg {
 }
 
 #text {
+  max-width: 90vw;
   text-align: center;
   font-family: monospace;
+  margin: 1em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 #text::after{
