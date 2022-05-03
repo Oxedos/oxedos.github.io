@@ -7,53 +7,50 @@ body {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-}
-
-.text-container {
-    min-height: 4.5em;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .content {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: space-evenly;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  padding: 1.25em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.text-container {
+  min-height: 4.5em;
 }
 
 .icon-container {
-    width: 100vw;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    align-items: center;
+  width: 100vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-/* .footer {
-    position: absolute;
-    bottom: 5em;
-    width: 100vw;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    align-items: center;
-} */
-
 svg {
-    fill: #ecf0f1;
+  fill: #ecf0f1;
 }
 
 #text {
   text-align: center;
   font-family: monospace;
+}
+
+#text::after{
+  content: "|";
+  line-height: 30px;
   animation: blink .5s step-end infinite alternate;
-  padding-right: 0.1em;
-  border-right: 3px solid #ecf0f1;
 }
 
 @keyframes blink {
-    50% {
-      border-color: transparent
-    }
-  }
+  from, to { color: transparent }
+  50% { color: #ecf0f1 }
+}

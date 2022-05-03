@@ -77,25 +77,25 @@
         '$display("Hello World, I am Marvin Kaiser");',
       ];
 
-      window.onload = carousel(texts, "text", 75);
+      window.onload = carousel(texts, document.getElementById("text"), 75);
 
-      async function typeSentence(sentence, eleRef, delay = 100) {
+      async function typeSentence(sentence, elem, delay = 100) {
         const letters = sentence.split("");
         const displayText = [];
         let i = 0;
         while (i < letters.length) {
           await waitForMs(delay);
           displayText.push(letters[i]);
-          document.getElementById(eleRef).innerHTML = displayText.join("");
+          elem.innerHTML = displayText.join("");
           i++;
         }
         return;
       }
 
-      async function carousel(carouselList, eleRef, typeDelay) {
+      async function carousel(carouselList, elem, typeDelay) {
         var line =
           carouselList[Math.floor(Math.random() * carouselList.length)];
-        await typeSentence(line, eleRef, typeDelay);
+        await typeSentence(line, elem, typeDelay);
       }
 
       function waitForMs(ms) {
