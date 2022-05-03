@@ -68,14 +68,9 @@
       }
 
       async function carousel(carouselList, eleRef, typeDelay) {
-        var i = 0;
-        while (true) {
-          await typeSentence(carouselList[i], eleRef, typeDelay);
-          await waitForMs(1500);
-          document.getElementById(eleRef).innerHTML = " ";
-          await waitForMs(500);
-          i = (i + 1) % carouselList.length;
-        }
+        var line =
+          carouselList[Math.floor(Math.random() * carouselList.length)];
+        await typeSentence(line, eleRef, typeDelay);
       }
 
       function waitForMs(ms) {
@@ -84,4 +79,3 @@
     </script>
   </body>
 </html>
-
